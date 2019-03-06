@@ -147,7 +147,7 @@ body {
     }
 }
 
-.heroimagebox-button{
+.main-button{
     border-radius: 30px;
     padding: 15px 35px;
     background-color: var(--main-color);
@@ -177,14 +177,15 @@ body {
     grid-template-columns: 1fr 1fr; 
     grid-template-rows: 1fr 5fr;
     grid-template-areas: 
-    "title title"
-    "image textbox";
+    "aboutbox-title aboutbox-title"
+    "aboutbox-image aboutbox-textbox";
 }
 
-
-
 .aboutbox-h1 {
-    grid-area: title;
+    grid-area: aboutbox-title;
+}
+
+.title-h1 {
     display: flex;
     justify-self: center;
     align-self: center;
@@ -193,7 +194,9 @@ body {
 }
 
 .aboutbox-img {
-    grid-area: image;
+    grid-area: aboutbox-image;
+}
+.img {
     width: 350px;
     display: flex;
     align-self: center;
@@ -203,7 +206,7 @@ body {
 
 .textbox {
     width: 60%;
-    grid-area: textbox;
+    grid-area: aboutbox-textbox;
     display: flex;
     align-content: center;
     justify-items: center;
@@ -239,12 +242,115 @@ body {
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 3fr 3fr;
         grid-template-areas: 
-        "title"
-        "image"
-        "textbox";
+        "aboutbox-title"
+        "aboutbox-image"
+        "aboutbox-textbox";
     }
     .textbox {
         width: auto;
         margin: 0px 30px;
     }
 }
+section {
+    margin: 15px 0px;
+}
+
+.treatmentbox {
+    grid-area: treatmentbox;
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: 1fr 5fr;
+    grid-template-areas: 
+    "treatmentbox-title treatmentbox-title"
+    "treatmentbox-img treatmentbox-buttonbox";
+}
+
+.treatmentbox-h1 {
+    grid-area: treatmentbox-title;
+}
+
+.treatmentbox-img {
+    grid-area: treatmentbox-img;
+}
+
+.treatmentbox-buttonbox {
+    margin-top: 15px;
+    grid-area: treatmentbox-buttonbox;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+}
+.treatmentbox-button{
+    margin: 15px 0px;
+    width: 80%;
+}
+@media only screen and (max-width: 576px) { 
+    .treatmentbox {
+        grid-template-columns: 1fr ; 
+        grid-template-rows: 1fr 3fr 3fr;
+        grid-template-areas: 
+        "treatmentbox-title"
+        "treatmentbox-img"
+        "treatmentbox-buttonbox";
+    }
+    .treatmentbox-buttonbox {
+        justify-content: center;
+        align-items: center;
+    }
+    .treatmentbox-button {
+        width: auto;
+    }
+}
+.localbox {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 5fr;
+    grid-template-areas: 
+    "localbox-title localbox-title"
+    "localbox-jf localbox-rj";
+}
+@media only screen and (max-width: 576px) { 
+    .localbox {
+        grid-template-columns: 1fr ;
+        grid-template-rows: 1fr 3fr 3fr;
+        grid-template-areas: 
+        "localbox-title"
+        "localbox-jf"
+        "localbox-rj";
+    }
+    .map-title {
+        margin: 45px;
+    }
+}
+
+
+.localbox-h1 {
+    grid-area: localbox-title;
+}
+
+.jfbox {
+    grid-area: localbox-jf;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.localbox-map {
+    width: 80%;
+    height: 100%;
+}
+
+.map-title {
+    margin: 15px 0px;
+}
+
+.rjbox {
+    grid-area: localbox-rj;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
