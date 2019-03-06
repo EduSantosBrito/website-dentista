@@ -2,20 +2,26 @@
 :root {
     --main-color: #040E38;
     --font-color: #888888;
+    --contrast-color-dark-bg: #ffffff;
+    --shadow-color: #cccccc;
     --font-family: "Open Sans", sans-serif;
 }
 body {
+    height: 100%;
+    width: 100%;
     display: grid;
-    grid-template-columns: 1fr 3fr;
-    grid-template-rows: 100vh;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100vh 280vh;
     grid-template-areas: 
-    "headerbox headerbox"; 
+    "headerbox"
+    "mainbox"; 
     font-family: var(--font-family);
     color: var(--font-color);
 }
 
 .headerbox {
     height: 100%;
+    width: 100%;
     grid-area: headerbox;
     display: grid;
     grid-template-columns: 1fr;
@@ -27,9 +33,10 @@ body {
 
 .navbarbox {
     height: 100%;
+    width: 100%;
     grid-area: navbarbox;
     display: grid;
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
     grid-template-areas: 
     "logo ulbox"
@@ -43,7 +50,7 @@ body {
     justify-self: center;
 }
 
-.ulbox {
+.navbarbox-ulbox {
     height: 100%;
     grid-area: ulbox;
     display: flex;
@@ -51,17 +58,67 @@ body {
     justify-content: flex-end;
     margin-right: 150px;
 }
-.ulbox-li {
+.navbarbox-li {
     margin: 0px 25px;
     cursor: pointer;
     font-weight: 300;
     font-size: 20px;
     transition: border 0.2s;
     border-bottom: 2px solid transparent;
-    text-shadow:  #000000;
 }
-.ulbox-li:hover {
+.navbarbox-li:hover {
     border-bottom: 2px solid var(--main-color);
+}
+
+.navbarbox-toggle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.navbarbox-hamburger {
+    width: 50px;
+}
+
+@media only screen and (min-width: 576px) {
+    .navbarbox-toggle {
+        display: none;
+    }
+    
+}
+
+@media only screen and (max-width: 575px) {
+  
+    .navbarbox-ulbox {
+        color: var(--contrast-color-dark-bg);
+        background-color: var(--main-color);
+        transition: transform .3s ease-in-out;
+        position: fixed;
+        width: 100%;
+        right: -200%;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+  
+    .navbarbox-ulbox:target {     
+        transform: translateX(-125%);
+    }
+
+    .navbarbox-li {
+        margin: 15px 15px;
+        font-size: 35px;
+    }
+  
+    .close {
+        text-align: right;
+        text-decoration: none;
+        font-size: 3em;
+        color: var(--contrast-color-dark-bg);
+        display: flex;
+        justify-self: flex-start;
+        align-self: center
+    }
+  
 }
 
 .heroimagebox {
@@ -80,17 +137,114 @@ body {
 .heroimagebox-h1 {
     font-weight: 600;
     font-size: 40px;
-    color:white;
+    color:var(--contrast-color-dark-bg);
+    text-align: center;
+}
+@media only screen and (max-width: 576px) { 
+    .heroimagebox-h1 {
+        font-size: 35px;
+        margin: 0px 15px;
+    }
 }
 
 .heroimagebox-button{
     border-radius: 30px;
     padding: 15px 35px;
-    background-color: #040e38;
+    background-color: var(--main-color);
     border:none;
-    color:white;
+    color:var(--contrast-color-dark-bg);
     font-size: 15px;
     outline:none;
     cursor: pointer;
     margin-top: 15px;
-  }
+}
+
+.mainbox {
+    grid-area: mainbox;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+    "aboutbox"
+    "treatmentbox"
+    "localbox"
+    "contactbox";
+}
+
+.aboutbox {
+    grid-area: aboutbox;
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: 1fr 5fr;
+    grid-template-areas: 
+    "title title"
+    "image textbox";
+}
+
+
+
+.aboutbox-h1 {
+    grid-area: title;
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    font-weight: 600;
+    font-size: 35px;
+}
+
+.aboutbox-img {
+    grid-area: image;
+    width: 350px;
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    box-shadow: 10px 10px 20px var(--shadow-color);
+}
+
+.textbox {
+    width: 60%;
+    grid-area: textbox;
+    display: flex;
+    align-content: center;
+    justify-items: center;
+    flex-direction: column;
+}
+.textbox-h2 {
+    font-size: 20px;
+    margin: 15px 0px;
+}
+
+.textbox-ul {
+    display: flex;
+    align-content: center;
+    justify-items: center;
+    flex-direction: column;
+    list-style: none;
+}
+.textbox-li {
+    margin: 15px 0px;
+    display: flex;
+    align-items: center;
+    justify-self: flex-end;
+}
+.textbox-li::before {
+    content: "•";
+    width: 1em;
+    font-size: 35px;
+    color: var(--main-color);
+}
+
+@media only screen and (max-width: 576px) { 
+    .aboutbox {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 3fr 3fr;
+        grid-template-areas: 
+        "title"
+        "image"
+        "textbox";
+    }
+    .textbox {
+        width: auto;
+        margin: 0px 30px;
+    }
+}

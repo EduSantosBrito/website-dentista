@@ -15,9 +15,12 @@
         <nav class="navbarbox">
             <img class="navbarbox-img" src="./assets/logo.png"
                 alt="Logotipo com a letra L escrita com estilo Script, abaixo escrito Caio Bellini Lovisi">
-            <ul class="ulbox">
-                <li class="ulbox-li">Home</li>
-                <li class="ulbox-li">Serviços</li>
+            <a class="navbarbox-toggle open" href="#nav"><img class="navbarbox-hamburger"
+                    src="./assets/hamburger-menu.svg" alt="Menu hamburger"></a>
+            <ul class="navbarbox-ulbox" id="nav">
+                <a class="navbarbox-toggle close" href="#">×</a>
+                <li class="navbarbox-li">Home</li>
+                <li class="navbarbox-li">Serviços</li>
             </ul>
         </nav>
         <div class="heroimagebox">
@@ -25,6 +28,29 @@
             <button class="heroimagebox-button">Learn more</button>
         </div>
     </header>
+    <main class="mainbox">
+        <section class="aboutbox">
+            <h1 class="aboutbox-h1">Sobre</h1>
+            <img class="aboutbox-img" src="./assets/about-image.svg"
+                alt="Cirurgião fazendo uma cirurgia em um paciente.">
+            <div class="textbox">
+                <h2 class="textbox-h2">Lorem ipsum dolor, sit amet consectetur adipisicing elit, sed do eiusmod tempor
+                    incididunt ut labore
+                    et dolore magna aliqua.</h2>
+                <ul class="textbox-ul">
+                    <li class="textbox-li">Quick wafting zephyrs vex bold Jim.</li>
+                    <p class="textbox-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                        incididunt ut labore et dolore magna aliqua.</p>
+                    <li class="textbox-li">Quick wafting zephyrs vex bold Jim.</li>
+                    <p class="textbox-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                        incididunt ut labore et dolore magna aliqua.</p>
+                    <li class="textbox-li">Quick wafting zephyrs vex bold Jim.</li>
+                    <p class="textbox-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                        incididunt ut labore et dolore magna aliqua.</p>
+                </ul>
+            </div>
+        </section>
+    </main>
 </body>
 
 </html>

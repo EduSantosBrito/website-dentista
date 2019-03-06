@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 86 52">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #040E38;
+        stroke-width: 10px;
+      }
+    </style>
+  </defs>
+  <g id="Hamburger_menu" data-name="Hamburger menu" transform="translate(-618.5 -41.5)">
+    <line id="Line_5" data-name="Line 5" class="cls-1" x2="86" transform="translate(618.5 46.5)"/>
+    <line id="Line_5-2" data-name="Line 5" class="cls-1" x2="86" transform="translate(618.5 67.5)"/>
+    <line id="Line_5-3" data-name="Line 5" class="cls-1" x2="86" transform="translate(618.5 88.5)"/>
+  </g>
+</svg>
