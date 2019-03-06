@@ -303,6 +303,7 @@ section {
     }
 }
 .localbox {
+    grid-area: localbox;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 5fr;
@@ -354,3 +355,35 @@ section {
     flex-direction: column;
 }
 
+.contactbox {
+    grid-area: contactbox;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 5fr;
+    grid-template-areas: 
+    "contactbox-title"
+    "contactbox-form";
+}
+.contactbox-h1 {
+    grid-area: contactbox-title;
+}
+
+.contactbox-form {
+    grid-area: contactbox-form;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.contactbox-input {
+    padding: 5px;
+}
+.contactbox-input, .contactbox-textarea {
+    margin: 10px 0px;
+    width: 300px;
+    border-radius: 20px;
+    border: 1px solid var(--main-color);
+    text-indent: 10px;
+    outline: none;
+    font-family: var(--font-family);
+}
