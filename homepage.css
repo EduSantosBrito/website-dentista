@@ -1,0 +1,252 @@
+@import './reset.css';
+@import './main.css';
+
+body {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100vh 280vh 40vh;
+    grid-template-areas: 
+    "headerbox"
+    "mainbox"
+    "footerbox"; 
+    font-family: var(--font-family);
+    color: var(--font-color);
+}
+
+@media only screen and (max-width: 576px) {
+    body {
+        grid-template-rows: 100vh 500vh 80vh;
+    }
+}
+
+.mainbox {
+    height: 100%;
+    grid-area: mainbox;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+    "aboutbox"
+    "treatmentbox"
+    "localbox"
+    "contactbox";
+}
+
+
+@media only screen and (max-width: 576px) { 
+    .mainbox {
+        grid-template-rows: 3fr 3fr 3fr 1fr;
+    }
+}
+
+.aboutbox {
+    grid-area: aboutbox;
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: 1fr 5fr;
+    grid-template-areas: 
+    "aboutbox-title aboutbox-title"
+    "aboutbox-image aboutbox-textbox";
+}
+
+.aboutbox-h1 {
+    grid-area: aboutbox-title;
+}
+
+.aboutbox-img {
+    grid-area: aboutbox-image;
+}
+.img {
+    width: 350px;
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    box-shadow: 10px 10px 20px var(--shadow-color);
+}
+
+.textbox {
+    width: 60%;
+    grid-area: aboutbox-textbox;
+    display: flex;
+    align-content: center;
+    justify-items: center;
+    flex-direction: column;
+}
+.textbox-h2 {
+    font-size: 20px;
+    margin: 15px 0px;
+}
+
+.textbox-ul {
+    display: flex;
+    align-content: center;
+    justify-items: center;
+    flex-direction: column;
+    list-style: none;
+}
+.textbox-li {
+    margin: 15px 0px;
+    display: flex;
+    align-items: center;
+    justify-self: flex-end;
+}
+.textbox-li::before {
+    content: "•";
+    width: 1em;
+    font-size: 35px;
+    color: var(--main-color);
+}
+
+@media only screen and (max-width: 576px) { 
+    .aboutbox {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 3fr 3fr;
+        grid-template-areas: 
+        "aboutbox-title"
+        "aboutbox-image"
+        "aboutbox-textbox";
+    }
+    .textbox {
+        width: auto;
+        margin: 0px 30px;
+    }
+}
+section {
+    margin: 15px 0px;
+}
+
+.treatmentbox {
+    grid-area: treatmentbox;
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: 1fr 5fr;
+    grid-template-areas: 
+    "treatmentbox-title treatmentbox-title"
+    "treatmentbox-img treatmentbox-buttonbox";
+}
+
+.treatmentbox-h1 {
+    grid-area: treatmentbox-title;
+}
+
+.treatmentbox-img {
+    grid-area: treatmentbox-img;
+}
+
+.treatmentbox-buttonbox {
+    margin-top: 15px;
+    grid-area: treatmentbox-buttonbox;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+}
+.treatmentbox-button{
+    margin: 15px 0px;
+    width: 80%;
+}
+@media only screen and (max-width: 576px) { 
+    .treatmentbox {
+        grid-template-columns: 1fr ; 
+        grid-template-rows: 1fr 3fr 3fr;
+        grid-template-areas: 
+        "treatmentbox-title"
+        "treatmentbox-img"
+        "treatmentbox-buttonbox";
+    }
+    .treatmentbox-buttonbox {
+        justify-content: center;
+        align-items: center;
+    }
+    .treatmentbox-button {
+        width: auto;
+    }
+}
+.localbox {
+    grid-area: localbox;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 5fr;
+    grid-template-areas: 
+    "localbox-title localbox-title"
+    "localbox-jf localbox-rj";
+}
+@media only screen and (max-width: 576px) { 
+    .localbox {
+        grid-template-columns: 1fr ;
+        grid-template-rows: 1fr 3fr 3fr;
+        grid-template-areas: 
+        "localbox-title"
+        "localbox-jf"
+        "localbox-rj";
+    }
+    .map-title {
+        margin: 45px;
+        text-align: center;
+    }
+}
+
+
+.localbox-h1 {
+    grid-area: localbox-title;
+}
+
+.jfbox {
+    grid-area: localbox-jf;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.localbox-map {
+    width: 80%;
+    height: 100%;
+}
+
+.map-title {
+    margin: 15px 0px;
+}
+
+.rjbox {
+    grid-area: localbox-rj;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.contactbox {
+    grid-area: contactbox;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 5fr;
+    grid-template-areas: 
+    "contactbox-title"
+    "contactbox-form";
+}
+.contactbox-h1 {
+    grid-area: contactbox-title;
+}
+
+.contactbox-form {
+    grid-area: contactbox-form;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.contactbox-input {
+    padding: 5px;
+}
+.contactbox-input, .contactbox-textarea {
+    margin: 10px 0px;
+    width: 300px;
+    border-radius: 20px;
+    border: 1px solid var(--main-color);
+    text-indent: 10px;
+    outline: none;
+    font-family: var(--font-family);
+}
