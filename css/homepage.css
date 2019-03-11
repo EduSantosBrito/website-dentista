@@ -147,6 +147,10 @@ section {
     margin: 15px 0px;
     width: 80%;
 }
+
+.treatmentbox-button-a {
+    color: var(--contrast-color-dark-bg)
+}
 @media only screen and (max-width: 576px) { 
     .treatmentbox {
         grid-template-columns: 1fr ; 

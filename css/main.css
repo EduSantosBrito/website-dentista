@@ -5,7 +5,9 @@
     --shadow-color: #cccccc;
     --font-family: "Open Sans", sans-serif;
 }
-
+a {
+    color: var(--font-color);
+}
 .headerbox {
     height: 100%;
     width: 100%;
@@ -111,7 +113,7 @@
 .heroimagebox {
     height: 100%;
     grid-area: heroimagebox;
-    background-image: url('./assets/hero-image.png');
+    background-image: url('../assets/hero-image.png');
     background-position: bottom right;
     background-size: cover;
     background-repeat: no-repeat;
